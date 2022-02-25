@@ -18,7 +18,6 @@ export const conceptsApi = async (request: Request, response: Response) => {
         children: []
     };
     await findIsAHierarchyForEnglishTerm(term, rootNode, 0, config);
-    console.log(JSON.stringify(rootNode));
     const result = {};
     nodeOutputFormatter(rootNode, result, {});
     response.status(200).json(result);
